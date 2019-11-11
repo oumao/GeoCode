@@ -49,20 +49,20 @@ nav ul li form input{
 }
 
 .place-info{
-	height: 400px;
-	width: 100%;
-}
-
-.details{
 	padding: 10px;
 	border: 0;
-	background: teal;
+	background: #B3B6B7;
 	border-radius: 5px;
 	width: 90%;
 	height: 300px;
 	position: relative;
 	left: 80px;
-	top: 40px;
+	top: 10px;
+	bottom: 50px;
+}
+
+.details{
+	
 }
 
 #maparea{
