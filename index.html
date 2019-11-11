@@ -33,18 +33,23 @@
 					<li>Temperature: 35&deg;</li>
 				</ul>
 			</div>
-
-			<span class="converter">
-				<button class="butt">Convert to Farenheit</button>
-			</span>
-			<span class="shareto">
-				<button class="butt">Share to facebook</button>
-			</span>
+			<div class="btns">
+				<span class="converter">
+					<button class="butt">Convert to Farenheit</button>
+				</span>
+				<span class="shareto">
+					<button class="butt">Share to facebook</button>
+				</span>
+			</div>
 		</div>
+		<br><br>
 		<div id="maparea"></div>
 	</main>
 </div>
 <script type="text/javascript">
+	const urlString = "https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=AIzaSyBEXI57STEvdC3BZhM7JEDdh5gFmClbGJM";
+
+
 	function initMap(){
 
 		var mapy = new google.maps.Map(document.getElementById('maparea'), 
