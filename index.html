@@ -10,32 +10,25 @@
 </head>
 <body>
 <div class="container">
-	
-	<header>
-		<nav>
-			<ul>
-				<li>GEOCODE</li>
-				<li>
-					<form>
-						<input type="text" name="place" placeholder="Enter the name of the place">
-						<input type="submit" name="submit" value="search" class="butt">
-					</form>
-				</li>
-			</ul>
-		</nav>
-	</header>
+	<h1>GEOCODE API</h1>
+	<div class="search">
+		<form>
+			<input type="text" name="place" placeholder="Enter the name of the place">
+			<button class="search-button" id="search">Search</button>
+		</form>
+	</div>
 	<main>
 		<div class="place-info">
 			<div class="details">
-				<h4>Kenya</h4>
+				<h4>Kenya</h4><hr>
 				<ul>
 					<li>Attitude</li>
-					<li>Temperature: 35&deg;</li>
+					<li>Temperature: 35&deg; C</li>
 				</ul>
 			</div>
 			<div class="btns">
 				<span class="converter">
-					<button class="butt">Convert to Farenheit</button>
+					<button class="butt" id="farenH">Convert to Farenheit</button>
 				</span>
 				<span class="shareto">
 					<button class="butt">Share to facebook</button>
@@ -46,28 +39,8 @@
 		<div id="maparea"></div>
 	</main>
 </div>
-<script type="text/javascript">
-	const urlString = "https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=AIzaSyBEXI57STEvdC3BZhM7JEDdh5gFmClbGJM";
-
-
-	function initMap(){
-
-		var mapy = new google.maps.Map(document.getElementById('maparea'), 
-			{
-	      		zoom: 4, 
-	      		center: {lat: 42.3601, lng: -71.0589}
-  			});
-
-		var marker = new google.maps.Marker({
-			position: {lat: 42.3601, lng: -71.0589}, 
-			map: mapy
-		});
-	}
-
-
-</script>
-<script async defer
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBEXI57STEvdC3BZhM7JEDdh5gFmClbGJM&callback=initMap">
-</script>
+<script type="text/javascript" src="index.js"></script>
+<!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBEXI57STEvdC3BZhM7JEDdh5gFmClbGJM&callback=initMap">
+</script> -->
 </body>
 </html>
