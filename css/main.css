@@ -1,41 +1,47 @@
 body {
 	padding: 0;
 	margin: 0;
+	box-sizing: border-box;
+}
+
+h1{
+	text-align: center;
 }
 
 .container{
 	width: 100%;
 	font-family: "Lato", Arial, serif, sans-serif;
+	background: ;
 }
 
-nav ul li:first-child{
-	font-weight: bold;
-	font-size: 35px;
+
+.search{
+	margin-top: 50px;
+	margin-left: 80px;
+	text-align: center;
 }
 
-nav ul {
-	background: gray;
-	height: 50px;
-	padding: 5px;
-	margin: 0;
-}
-
-nav ul li{
-	display: inline;
-	list-style: none;
+.search form input{
 	padding: 10px;
-}
-
-nav ul li form{
-	float: right;
-}
-
-nav ul li form input{
-	padding: 10px;
-	border-radius: 8px;
+	border-radius: 5px;
 	width: 500px;
 	height: 25px;
+	border: 0.7px solid gray;
+}
+
+.search-button {
+	width: 100px;
+	height: 45px;
+	padding: 5px;
+	border-radius: 5px;
+	background: gray;
+	color: black;
 	border: 0;
+}
+
+.search-button:hover{
+	background: skyblue;
+	color: white;
 }
 
 .butt{
@@ -43,15 +49,23 @@ nav ul li form input{
 	height: 35px;
 	padding: 5px;
 	border-radius: 5px;
-	background: skyblue;
+	background: white;
 	color: black;
 	border: 0;
+}
+
+.butt:hover {
+	background: gray;
+}
+
+.search-butt:hover{
+	background: skyblue;
 }
 
 .place-info{
 	padding: 10px;
 	border: 0;
-	background: #B3B6B7;
+	background: #78C3FB;
 	border-radius: 5px;
 	width: 90%;
 	height: 300px;
@@ -69,4 +83,10 @@ nav ul li form input{
 	width: 100%;
 	height: 400px;
 	background: grey;
+}
+
+@media screen and (max-width: 768px){
+	.container{
+		width: 100%;
+	}
 }
