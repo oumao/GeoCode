@@ -3,32 +3,37 @@
 <head>
 	<title>geocode</title>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
-	<link rel="stylesheet" type="text/css" href="css/fontawesome/css/all.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
 
 </head>
 <body>
 <div class="container">
 	<h1>GEOCODE API</h1>
 	<div class="search">
-		<form>
-			<input type="text" name="place" placeholder="Enter the name of the place">
-			<button class="search-button" id="search">Search</button>
+		<form id="search-form">
+			<input type="text" name="place" placeholder="Enter the name of the place" id="thisPlace" required>
+			<input type="submit" name="submit" value="submit" class="search-button" id="search">
 		</form>
 	</div>
 	<main>
 		<div class="place-info">
-			<div class="details">
-				<h4>Kenya</h4><hr>
-				<ul>
-					<li>Attitude</li>
-					<li>Temperature: 35&deg; C</li>
-				</ul>
+			<div class="details" id="output">
+				<!--name of the place--->
+				<h4 id="count-name"></h4><hr>
+				<p id="speed"></p>
+				<p id="temp"></p>
+				<p id="humid"></p>
+				<p id="desc"></p>
+				<!-- Other Details-->
 			</div>
 			<div class="btns">
 				<span class="converter">
 					<button class="butt" id="farenH">Convert to Farenheit</button>
+				</span>
+				<span class="converter">
+					<button class="butt" id="celC">Convert to Celcius</button>
 				</span>
 				<span class="shareto">
 					<button class="butt">Share to facebook</button>
