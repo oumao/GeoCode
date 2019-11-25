@@ -36,24 +36,28 @@ searchForm.addEventListener('submit', ($e) => {
 
 		document.getElementById('count-name').innerHTML = nameOutput;
 		document.getElementById('speed').innerHTML = 'Wind speed: '+ windOutput;
-		document.getElementById('temp').innerHTML = 'Temperatures: ' + tempOutput;
+		document.getElementById('temp').innerHTML = 'Temperatures: ' + tempOutput + ' &deg;K';
 		document.getElementById('humid').innerHTML = 'Humidity: ' + humidOutput;
 		document.getElementById('desc').innerHTML = 'Weather: ' + weatherDesc;
 
+		let farenHeit = (tempOutput-273.15)*(9/5) + 32;
+
+		let celCius = (farenHeit-32)*(5/9);
+
+		document.getElementById('farenH').addEventListener('click', () => {
+			document.getElementById('temp').innerHTML = 'Temperatures: ' + farenHeit.toFixed(2) + ' &deg;F';
+			document.getElementById('farenH').style.display = 'none';
+			document.getElementById('celC').style.display = 'inline';
+		});
+
+		document.getElementById('celC').addEventListener('click', () => {
+			document.getElementById('temp').innerHTML = 'Temperatures: ' + celCius.toFixed(2) + ' &deg;C';
+			document.getElementById('celC').style.display = 'none';
+			document.getElementById('farenH').style.display = 'inline';
+		});
 
 	})
 	.catch( error => alert("Wrong City name Try again!"));
 });
 
 
-// converting Celcius to Farenheit
-// getElementById('celcius').addEventListener('click', () => {
-
-// });
-
-// // converting Farenheit to Celcius
-// let farenConv = document.getElementById('farenH');
-
-// farenConv.addEventListener('click', () => {
-// 	console.log('Hello world');
-// });
