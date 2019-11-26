@@ -26,17 +26,19 @@
 				<p id="temp"></p>
 				<p id="humid"></p>
 				<p id="desc"></p>
+				<p id="long"></p>
+				<p id="lati"></p>
 				<!-- Other Details-->
 			</div>
 			<div class="btns">
 				<span class="converter">
-					<button class="butt" id="farenH">Convert to Farenheit</button>
+					<button class="butt" id="farenH">Farenheit</button>
 				</span>
 				<span class="converter">
-					<button class="butt" id="celC">Convert to Celcius</button>
+					<button class="butt" id="celC">Celcius</button>
 				</span>
 				<span class="shareto">
-					<button class="butt">Share to facebook</button>
+					<div class="fb-share-button" data-href="https://oumao.github.io/" data-layout="button" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Foumao.github.io%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
 				</span>
 			</div>
 		</div>
@@ -44,8 +46,34 @@
 		<div id="maparea"></div>
 	</main>
 </div>
+<div id="fb-root"></div>
 <script type="text/javascript" src="index.js"></script>
-<!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBEXI57STEvdC3BZhM7JEDdh5gFmClbGJM&callback=initMap">
-</script> -->
+<script type="text/javascript">
+	
+	// Google Map API
+		const url = "https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=AIzaSyBEXI57STEvdC3BZhM7JEDdh5gFmClbGJM";
+
+		let longitude = document.getElementById('long').textContent;
+		let latitude = document.getElementById('lati').textContent;
+
+		console.log(longitude);
+
+		function initMap(){
+
+				var mapy = new google.maps.Map(document.getElementById('maparea'), 
+					{
+						zoom: 2, 
+						center: {lat: latitude, lng: longitude}
+					});
+
+				var marker = new google.maps.Marker({
+					position: {lat: latitude, lng: longitude}, 
+					map: mapy
+				});
+			}
+</script>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v5.0&appId=2236495363116085&autoLogAppEvents=1"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBEXI57STEvdC3BZhM7JEDdh5gFmClbGJM&callback=initMap">
+</script>
 </body>
 </html>
