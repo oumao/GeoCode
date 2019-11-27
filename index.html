@@ -53,24 +53,26 @@
 	// Google Map API
 		const url = "https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=AIzaSyBEXI57STEvdC3BZhM7JEDdh5gFmClbGJM";
 
-		let longitude = document.getElementById('long').textContent;
-		let latitude = document.getElementById('lati').textContent;
-
-		console.log(longitude);
-
 		function initMap(){
 
 				var mapy = new google.maps.Map(document.getElementById('maparea'), 
 					{
-						zoom: 2, 
-						center: {lat: latitude, lng: longitude}
+						zoom: 4, 
+						center: {lat:-1.28333,  lng: 36.81667}
 					});
 
-				var marker = new google.maps.Marker({
-					position: {lat: latitude, lng: longitude}, 
-					map: mapy
-				});
+
+				placeMarker({lat: document.getElementById('lati').textContent,  lng: document.getElementById('long').textContent});
+
+				function placeMarker(coords){
+					var marker = new google.maps.Marker({
+							position: coords, 
+							map: mapy,
+							icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
+						});
+				}
 			}
+	
 </script>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v5.0&appId=2236495363116085&autoLogAppEvents=1"></script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBEXI57STEvdC3BZhM7JEDdh5gFmClbGJM&callback=initMap">
