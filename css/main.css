@@ -16,6 +16,9 @@ h1{
 	font-family: 'Roboto Mono', tahoma, monospace;
 }
 
+#long, #lati{
+	display: none;
+}
 
 .search{
 	margin-top: 30px;
@@ -86,7 +89,6 @@ h1{
 
 #farenH{
 	display: none;
-	margin-bottom: 50px;
 }
 
 
@@ -118,7 +120,7 @@ h1{
 
 	#search-form{
 		display: grid;
-		grid-template-columns: 560px 200px;
+		grid-template-columns: 70% 20%;
 	}
 
 	.search form input:first-child{
@@ -129,8 +131,8 @@ h1{
 	}
 
 	.search-button {
-		height: 45px;
-		padding: 5px;
+		height: 55px;
+		padding: 10px;
 		margin: 3%;
 		border-radius: 5px;
 		background: gray;
